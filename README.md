@@ -9,8 +9,6 @@ export GIT_USER=<username>
 export GIT_TOKEN=<PAC>
 export GIT_EMAIL=<email>
 
-git config credential.helper "/bin/bash /home/ec2-user/environment/learn/credential-creds.sh"
-git config --global user.name "${GIT_USER}"
-git config --global user.email "${GIT_EMAIL}"
-```
+./github-setup.sh
 
+```
