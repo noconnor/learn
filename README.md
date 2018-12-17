@@ -9,6 +9,6 @@ export GIT_USER=<username>
 export GIT_TOKEN=<PAC>
 export GIT_EMAIL=<email>
 
-./github-setup.sh
+./github-setup.sh init
 
 ```
