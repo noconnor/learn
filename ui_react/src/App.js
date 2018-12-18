@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import ExplorerForm from './components/Explorer/Form'
+// import ExplorerForm from './components/Explorer/Form'
+import LoginForm from './components/Login/Form'
 import owl from './owl.png';
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
       <header className="App-header">
           <img src={owl} className="App-logo" alt="logo" />
           <p/ >
-        <ExplorerForm />
+        <LoginForm />
         
       </header>
     </div>
