@@ -1,14 +1,5 @@
 # learn
 
-# AWS cli: Uploading to s3
-
-To deploy UI execute the following:
-
-```
-cd ${PROJECT_ROOT}/ui_react
-aws s3 cp --recursive build/ s3://learn.noconnor.xyz
-```
-
 # IDE Setup: Cloud9
 
 ## React Setup

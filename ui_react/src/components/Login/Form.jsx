@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Button, FormGroup, FormControl}  from 'react-bootstrap';
 import isEmpty from 'validator/lib/isEmpty';
 
+import Auth from '@aws-amplify/auth';
+
 class LoginForm extends Component {
     constructor(props){
         super(props);
@@ -12,6 +14,7 @@ class LoginForm extends Component {
             username:'',
             password:''
         };
+        this.login = this.login.bind(this);
     }
     handleUsernameChange(event){
         this.setState({username:event.target.value});
@@ -25,6 +28,11 @@ class LoginForm extends Component {
     isLoginDisabled(){
        const opts = {ignore_whitespace:true};
        return isEmpty(this.state.username, opts) || isEmpty(this.state.password, opts);
+    }
+    login(){
+        Auth.signIn(this.state.username, this.state.password)
+            .then(success => console.log('successful sign in'))
+            .catch(err => console.log(err));
     }
     render(){
         const disabled=this.isLoginDisabled();
@@ -55,7 +63,7 @@ class LoginForm extends Component {
                   />
                   <FormControl.Feedback />
                 </FormGroup>
-                <Button bsStyle="primary" disabled={disabled}>Login</Button>
+                <Button bsStyle="primary" disabled={disabled} onClick={!disabled ? this.login : null}>Login</Button>
             </form>
         );
     }
