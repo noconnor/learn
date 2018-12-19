@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 
-import './App.css';
-import ExplorerForm from './components/Explorer/Form'
-import LoginForm from './components/Cognito/Login/Form'
-import BypassVerify from './components/Cognito/Verify/Bypass'
-import owl from './owl.png';
-import { Authenticator, Greetings, RequireNewPassword, VerifyContact } from "aws-amplify-react";
+import 'App.css';
+import ExplorerForm from 'components/Explorer/Form'
+import LoginForm from 'components/Cognito/SignIn'
+import Banner from 'components/Cognito/Greetings'
+import owl from 'owl.png';
+import { Authenticator } from "aws-amplify-react";
 
 
 class App extends Component {
   render() {
     if (this.props.authState === "signedIn") {
+      console.log("Rendering app...");
       return (
         <div className="App">
           <header className="App-header">
               <img src={owl} className="App-logo" alt="logo" />
               <p />
-            <ExplorerForm />
+              <ExplorerForm />
           </header>
         </div>
       );
@@ -39,10 +40,7 @@ class AppWithAuth extends React.Component {
       <div>
           <Authenticator hideDefault={true} amplifyConfig={config}>
             <LoginForm />
-            <BypassVerify />
-            <Greetings />
-            <RequireNewPassword />
-            <VerifyContact/>
+            <Banner/>
             <App />
           </Authenticator>
       </div>

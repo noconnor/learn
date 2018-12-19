@@ -1,16 +1,36 @@
 import React from 'react';
 import {Button, FormGroup, FormControl}  from 'react-bootstrap';
 import { SignIn } from "aws-amplify-react";
-import '../../../App.css';
-import owl from '../../../owl.png';
+import 'App.css';
+import owl from 'owl.png';
+import Auth from '@aws-amplify/auth';
 // import isEmpty from 'validator/lib/isEmpty';
 
+// https://dev.to/kylegalbraith/how-to-easily-customize-the-aws-amplify-authentication-ui-42pl
 class LoginForm extends SignIn {
-    constructor(props){
-        super(props);
+    constructor(props, context){
+        super(props, context);
         this._validAuthStates = ["signIn", "signedOut"];
+        this.signIn = this.signIn.bind(this);
+    }
+    async signIn(){
+        const { username, password } = this.inputs;
+        this.setState({loading: true});
+        try {
+            const user = await Auth.signIn(username, password);
+            if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+                this.changeState('requireNewPassword', user);
+            } else {
+                this.changeState('signedIn', user);
+            }
+        } catch (err) {
+            this.error(err);
+        } finally {
+            this.setState({loading: false})
+        }
     }
     showComponent(theme){
+        console.log("Rendering signIn");
         return (
             <div className="App">
                 <header className="App-header">
@@ -40,7 +60,7 @@ class LoginForm extends SignIn {
                       />
                       <FormControl.Feedback />
                     </FormGroup>
-                    <Button bsStyle="primary" onClick={() => super.signIn()}>Login</Button>
+                    <Button bsStyle="primary" onClick={() => this.signIn()}>Login</Button>
                 </form>
                 </header>
             </div>
