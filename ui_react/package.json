@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "aws-amplify": "^1.1.17",
+    "aws-amplify-react": "^2.2.4",
     "aws-amplify-react-native": "^2.1.5",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
