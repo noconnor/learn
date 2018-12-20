@@ -7,7 +7,7 @@ import 'App.css';
 class LogoutLink extends AuthPiece {
     constructor(props){
         super(props);
-        // this._validAuthStates = ["signedIn"];
+        this._validAuthStates = ["signedIn"];
         this.signOut = this.signOut.bind(this);
         this.state = {
             authState: props.authState,
