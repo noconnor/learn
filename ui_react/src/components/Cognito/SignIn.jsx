@@ -1,13 +1,12 @@
 import React from 'react';
 import {Button, FormGroup, FormControl}  from 'react-bootstrap';
-import { SignIn } from "aws-amplify-react";
+import { AuthPiece } from "aws-amplify-react";
 import 'App.css';
 import owl from 'owl.png';
 import Auth from '@aws-amplify/auth';
-// import isEmpty from 'validator/lib/isEmpty';
 
 // https://dev.to/kylegalbraith/how-to-easily-customize-the-aws-amplify-authentication-ui-42pl
-class LoginForm extends SignIn {
+class LoginForm extends AuthPiece {
     constructor(props, context){
         super(props, context);
         this._validAuthStates = ["signIn", "signedOut"];

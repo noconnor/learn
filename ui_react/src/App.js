@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import 'App.css';
 import ExplorerForm from 'components/Explorer/Form'
+import Menu from 'components/Explorer/Greetings'
 import LoginForm from 'components/Cognito/SignIn'
-import Banner from 'components/Cognito/Greetings'
 import RequireNewPassword from 'components/Cognito/Password'
 import owl from 'owl.png';
 import { Authenticator } from "aws-amplify-react";
@@ -15,6 +15,7 @@ class App extends Component {
       console.log("Rendering app...");
       return (
         <div className="App">
+          <Menu {...this.props} />
           <header className="App-header">
               <img src={owl} className="App-logo" alt="logo" />
               <p />
@@ -41,7 +42,6 @@ class AppWithAuth extends React.Component {
       <div>
         <Authenticator hideDefault={true} amplifyConfig={config}>
           <LoginForm />
-          <Banner/>
           <RequireNewPassword />
           <App />
         </Authenticator>
