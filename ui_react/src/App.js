@@ -22,7 +22,7 @@ class App extends Component {
         </div>
       );
     } else {
-      return <h1>{this.props.authState}</h1>;
+      return null;
     }
   }
 }

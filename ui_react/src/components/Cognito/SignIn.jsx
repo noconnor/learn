@@ -12,6 +12,7 @@ class LoginForm extends SignIn {
         super(props, context);
         this._validAuthStates = ["signIn", "signedOut"];
         this.signIn = this.signIn.bind(this);
+        this.state = { loading: false };
     }
     async signIn(){
         const { username, password } = this.inputs;
@@ -60,7 +61,9 @@ class LoginForm extends SignIn {
                       />
                       <FormControl.Feedback />
                     </FormGroup>
-                    <Button bsStyle="primary" onClick={() => this.signIn()}>Login</Button>
+                    <Button bsStyle="primary" 
+                        disabled={this.state.loading}
+                        onClick={() => this.signIn()}>{this.state.loading ? 'One Sec..' : 'Login'}</Button>
                 </form>
                 </header>
             </div>
