@@ -63,7 +63,7 @@ class LoginForm extends SignIn {
                     </FormGroup>
                     <Button bsStyle="primary" 
                         disabled={this.state.loading}
-                        onClick={() => this.signIn()}>{this.state.loading ? 'One Sec..' : 'Login'}</Button>
+                        onClick={() => this.signIn()}>{this.state.loading ? 'One Second..' : 'Login'}</Button>
                 </form>
                 </header>
             </div>
