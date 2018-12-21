@@ -58,5 +58,6 @@ aws cognito-idp set-ui-customization --user-pool-id us-east-1_ad7bv0cEJ \
 To deploy UI execute the following:
 
 ```
-aws s3 sync --delete build/ s3://learn.noconnor.xyz
+npm run build
+aws s3 sync --delete build/ s3://explorer.noconnor.xyz
 ```
