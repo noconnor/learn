@@ -34,9 +34,9 @@ class AppWithAuth extends React.Component {
 
   render() {
     const config = {        
-        region: 'us-east-1',
-        userPoolId: 'us-east-1_ad7bv0cEJ',
-        userPoolWebClientId : '31kkeavn30400faua7h2kh08hs'
+        region: 'us-east-2',
+        userPoolId: 'us-east-2_MVctqFLBX',
+        userPoolWebClientId : '6us22uqpnfa45q639bdkklg0a0'
     };
     return (
       <div>
