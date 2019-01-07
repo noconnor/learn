@@ -42,22 +42,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-## AWS Cognito: Customize login
-
-```
-aws cognito-idp set-ui-customization --user-pool-id us-east-1_ad7bv0cEJ \
---client-id 31kkeavn30400faua7h2kh08hs \
---css ".inputField-customizable{color:white;} .label-customizable{ color: #F0FFFF;} .textDescription-customizable{color: #F0FFFF;} .background-customizable{background:#282c34;} .banner-customizable{background:#282c34;} .logo-customizable{max-width:10%;max-height:50%}" \
---image-file fileb:///src/owl_logo.png
-```
-
-## AWS cli: Uploading to s3
-
-To deploy UI execute the following:
-
-```
-npm run build
-aws s3 sync --delete build/ s3://explorer.noconnor.xyz
-```

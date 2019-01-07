@@ -7,6 +7,7 @@ import LoginForm from 'components/Cognito/SignIn'
 import RequireNewPassword from 'components/Cognito/Password'
 import owl from 'owl.png';
 import { Authenticator } from "aws-amplify-react";
+import aws_exports from './aws-exports';
 
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
           <header className="App-header">
               <img src={owl} className="App-logo" alt="logo" />
               <p />
-              <ExplorerForm />
+              <ExplorerForm {...this.props}/>
           </header>
         </div>
       );
@@ -33,14 +34,9 @@ class App extends Component {
 class AppWithAuth extends React.Component {
 
   render() {
-    const config = {        
-        region: 'eu-west-1',
-        userPoolId: 'eu-west-1_FGjxCdN8f',
-        userPoolWebClientId : '1sbvahnckrkjvejet229dtscb0'
-    };
     return (
       <div>
-        <Authenticator hideDefault={true} amplifyConfig={config}>
+        <Authenticator hideDefault={true} amplifyConfig={aws_exports}>
           <LoginForm />
           <RequireNewPassword />
           <App />

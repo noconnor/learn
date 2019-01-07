@@ -4,6 +4,7 @@ import { NavItem }  from 'react-bootstrap';
 import Auth from '@aws-amplify/auth';
 import 'App.css';
 
+// https://dev.to/kylegalbraith/how-to-easily-customize-the-aws-amplify-authentication-ui-42pl
 class LogoutLink extends AuthPiece {
     constructor(props){
         super(props);

@@ -3,6 +3,7 @@ import {Button, FormGroup, FormControl}  from 'react-bootstrap';
 import { AuthPiece } from "aws-amplify-react";
 import Auth from '@aws-amplify/auth';
 
+// https://dev.to/kylegalbraith/how-to-easily-customize-the-aws-amplify-authentication-ui-42pl
 class RequireNewPassword extends AuthPiece {
     constructor(props){
         super(props);

@@ -1,0 +1,11 @@
+service: urls
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: prod
+  region: eu-west-1
+
+functions:
+  urlmanager:
+    handler: handler.create
