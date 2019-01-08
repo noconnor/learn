@@ -11,7 +11,7 @@ def create(event, context):
         "statusCode": 200,
         "headers": {
             "Access-Control-Allow-Origin" : "*",
-            "Access-Control-Allow-Credentials" : "true"
+            "Access-Control-Allow-Headers" : "*"
         },
         "body": json.dumps(body)
     }

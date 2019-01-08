@@ -5,28 +5,6 @@
 			"providerPlugin": "awscloudformation"
 		}
 	},
-	"function": {
-		"urlmanager": {
-			"service": "Lambda",
-			"providerPlugin": "awscloudformation",
-			"build": true,
-			"dependsOn": []
-		}
-	},
-	"api": {
-		"urls": {
-			"service": "API Gateway",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "urlmanager",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				}
-			]
-		}
-	}
+	"function": {},
+	"api": {}
 }

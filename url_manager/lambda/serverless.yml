@@ -1,4 +1,12 @@
-service: urls
+service: explorer
+
+custom:
+    authorizer:
+        arn: arn:aws:cognito-idp:eu-west-1:288636345286:userpool/eu-west-1_Qxql5FxDZ
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+        identityValidationExpression: '.*'
+
 
 provider:
   name: aws
@@ -7,5 +15,18 @@ provider:
   region: eu-west-1
 
 functions:
-  urlmanager:
+  urls:
     handler: handler.create
+    events:
+      - http:
+          path: /urls
+          method: POST
+          cors: true
+          authorizer: ${self:custom.authorizer}
+      - http:
+          path: /urls
+          method: OPTIONS
+          cors: true
+
+        
+      

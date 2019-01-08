@@ -142,42 +142,6 @@
 					"env": "prod"
 				}
 			}
-		},
-		"functionurlmanager": {
-			"Type": "AWS::CloudFormation::Stack",
-			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/explorer-20190107153351-deployment/amplify-cfn-templates/function/urlmanager-cloudformation-template.json",
-				"Parameters": {
-					"env": "prod"
-				}
-			}
-		},
-		"apiurls": {
-			"Type": "AWS::CloudFormation::Stack",
-			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/explorer-20190107153351-deployment/amplify-cfn-templates/api/urls-cloudformation-template.json",
-				"Parameters": {
-					"authRoleName": {
-						"Ref": "AuthRoleName"
-					},
-					"unauthRoleName": {
-						"Ref": "UnauthRoleName"
-					},
-					"functionurlmanagerName": {
-						"Fn::GetAtt": [
-							"functionurlmanager",
-							"Outputs.Name"
-						]
-					},
-					"functionurlmanagerArn": {
-						"Fn::GetAtt": [
-							"functionurlmanager",
-							"Outputs.Arn"
-						]
-					},
-					"env": "prod"
-				}
-			}
 		}
 	},
 	"Outputs": {

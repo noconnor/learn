@@ -25,8 +25,7 @@ class ExplorerForm extends Component {
     }
     submit(){
         this.setState({loading:true})
-        API
-        .post("urls", "/urls", {})
+        API.post("urls", "/urls", {})
         .then(response =>{
             console.log(response);
             this.setState({loading:false})  
@@ -35,7 +34,6 @@ class ExplorerForm extends Component {
             this.setState({loading:false})  
             console.log(error);
         });
-        console.log("Test");
     }
     render() {
         const validationState = this.getValidationState();

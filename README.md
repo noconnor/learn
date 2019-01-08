@@ -87,12 +87,16 @@ amplify status
 <br />
 
 ##### Create a python lambda
-Create a basic python lambda - _api gateway created above using amplify_ ([full docs](https://serverless.com/framework/docs/providers/aws/))
+Create a basic python lambda WITH _api gateway_ ([full docs](https://serverless.com/framework/docs/providers/aws/))
+
+_NOTE: this api gateway links to existing cognito user pool created above ([see stackoverflow](https://stackoverflow.com/a/41664843))_
+
 ```
 export LAMBDA_DIR=url_manager/lambda
-export LAMBDA_NAME=urlmanager
+export LAMBDA_NAME=urls
 export SERVICE_NAME=urls
 export HANDLER=handler.doSomething
+export COGNITO_ARN=arn:aws:cognito-idp:eu-west-1:...:userpool/eu-west-...
 
 mkdir -p ${LAMBDA_DIR} && cd ${LAMBDA_DIR}
 
@@ -103,6 +107,13 @@ serverless create --template aws-python3 --name ${LAMBDA_NAME}
 echo "
 service: ${SERVICE_NAME}
 
+custom:
+    authorizer:
+        arn: ${COGNITO_ARN}
+        resultTtlInSeconds: 0
+        identitySource: method.request.header.Authorization
+        identityValidationExpression: '.*'
+
 provider:
   name: aws
   runtime: python3.7
@@ -112,32 +123,28 @@ provider:
 functions:
   ${LAMBDA_NAME}:
     handler: ${HANDLER}
+    events:
+      - http:
+          path: /${LAMBDA_NAME}
+          method: POST
+          cors: true
+          authorizer: ${self:custom.authorizer}
+      - http:
+          path: /${LAMBDA_NAME}
+          method: OPTIONS
+          cors: true
     
 " > serverless.yml
 
 ```
 <br />
 
-##### Create AWS API Gateway
 
-Creates an AWS API Gateway and integrates with existing lambda
+##### Deploy python lambda
+
 
 ```
-# run commands and follow console prompts
-export REACT_APP=ui_react
-cd ${REACT_APP}
-
-amplify api add
-amplify push
-amplify status
-# to remove an api run: 
-amplify api remove
-```
-<br />
-
-##### Deploy python lambda 
-```
-export LAMBDA_NAME=urlmanager
+export LAMBDA_NAME=urls
 
 serverless deploy
 
