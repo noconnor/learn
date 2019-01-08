@@ -3,19 +3,6 @@
 Analyse, store and aggregate uploaded data sources. 
 Group by common themes and provide an interface to explore these sources.
 
-### Environment: Cloud9
-Create a github [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-
-```
-export GIT_USER=<username>
-export GIT_TOKEN=<PAC>
-export GIT_EMAIL=<email>
-
-./github-setup.sh init # init github access
-./c9-resize 20 # resize instance to 20GB disk
-
-```
-
 ### Setting up a project from scratch
 
 * [NPM setup](#setup-latest-npm-version) - setting up the NPM environment
@@ -26,6 +13,7 @@ export GIT_EMAIL=<email>
 * [Create AWS API Gateway](#create-aws-api-gateway) - creating an API Gateway and linking to an existing lambda
 * [Deploy lambda code](#deploy-python-lambda ) - deploying/updating a lambda
 * [Deploy react APP to s3](#deploy-react-app-to-s3) - deploy react app to s3
+* [Cloud9 Setup](#cloud9-setup) - env setup tips for working with cloud9
 
 <br />
 
@@ -171,3 +159,16 @@ npm run build
 aws s3 sync --delete build/ s3://${BUCKET}
 ```
 <br />
+
+### Cloud9 Setup
+Create a github [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+
+```
+export GIT_USER=<username>
+export GIT_TOKEN=<PAC>
+export GIT_EMAIL=<email>
+
+./github-setup.sh init # init github access
+./c9-resize 20 # resize instance to 20GB disk
+
+```
