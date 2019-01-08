@@ -31,7 +31,7 @@ nvm alias default stable
 Create a basic react app ([full docs](https://facebook.github.io/create-react-app/docs/getting-started#npm))
 
 ```
-export REACT_APP=ui_react
+export REACT_APP=explorer
 mkdir ${REACT_APP} & cd ${REACT_APP}
 
 npx create-react-app ${REACT_APP}
@@ -80,7 +80,7 @@ Create a basic python lambda WITH _api gateway_ ([full docs](https://serverless.
 _NOTE: this api gateway links to existing cognito user pool created above ([see stackoverflow](https://stackoverflow.com/a/41664843))_
 
 ```
-export LAMBDA_DIR=url_manager/lambda
+export LAMBDA_DIR=lambda_urls
 export LAMBDA_NAME=urls
 export SERVICE_NAME=urls
 export HANDLER=handler.doSomething
@@ -151,7 +151,7 @@ It is assumed there is an existing domain and cloudfront setup in place to acces
 
 ```
 export BUCKET=explorer.noconnor.xyz
-export REACT_APP=ui_react
+export REACT_APP=explorer
 
 cd ${REACT_APP}
 
