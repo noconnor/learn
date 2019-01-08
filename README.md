@@ -58,12 +58,15 @@ See `package.json` for custom settings (i.e. setting `NODE_PATH=./src/` to allow
 
 AWS Amplify can be used to create Cognito pools and API Gateways required to suport your app ([full docs](https://aws-amplify.github.io/docs/))
 
+Amplify workflow: https://aws-amplify.github.io/docs/cli/multienv?sdk=js
+
 ```
 cat ~/.aws/credentials 
 export AWS_ACCESS_KEY_ID=*****************
 export AWS_SECRET_ACCESS_KEY=*****************
 
 npm install -g @aws-amplify/cli
+npm install -g @aws-amplify/cli@multienv
 npm install --save aws-amplify aws-amplify-react
 
 amplify init
@@ -124,7 +127,7 @@ Creates an AWS API Gateway and integrates with existing lambda
 export REACT_APP=ui_react
 cd ${REACT_APP}
 
-amplify add api
+amplify api add
 amplify push
 amplify status
 # to remove an api run: 
