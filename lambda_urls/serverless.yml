@@ -2,7 +2,7 @@ service: explorer
 
 custom:
     authorizer:
-        arn: arn:aws:cognito-idp:eu-west-1:288636345286:userpool/eu-west-1_Qxql5FxDZ
+        arn: ${file(../explorer/src/config.json):cognito_arn}
         resultTtlInSeconds: 0
         identitySource: method.request.header.Authorization
         identityValidationExpression: '.*'

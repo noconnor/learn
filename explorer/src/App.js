@@ -9,6 +9,7 @@ import owl from 'owl.png';
 import { Authenticator } from "aws-amplify-react";
 import Amplify, {Auth} from 'aws-amplify';
 import aws_exports from './aws-exports';
+import globals from './config.json'
 
 Amplify.configure({
 
@@ -23,7 +24,7 @@ Amplify.configure({
         endpoints: [
             {
                 name: "urls",
-                endpoint: "https://p38hu3uxw0.execute-api.eu-west-1.amazonaws.com/prod",
+                endpoint: globals.urls_endpoint,
                 custom_header: async () => { 
                   // https://aws-amplify.github.io/docs/js/api#custom-request-headers
                   return { Authorization: (await Auth.currentSession()).idToken.jwtToken };

@@ -172,3 +172,5 @@ export GIT_EMAIL=<email>
 ./c9-resize 20 # resize instance to 20GB disk
 
 ```
+
+<br />

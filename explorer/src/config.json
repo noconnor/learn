@@ -1,0 +1,4 @@
+{
+    "cognito_arn" : "arn:aws:cognito-idp:eu-west-1:288636345286:userpool/eu-west-1_Qxql5FxDZ",
+    "urls_endpoint" : "https://6u4t0xc5n0.execute-api.eu-west-1.amazonaws.com/prod"
+}
