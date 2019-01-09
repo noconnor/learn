@@ -1,3 +1,4 @@
+/*global expect*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppWithAuth from './AppWithAuth';

@@ -1,3 +1,4 @@
+/*global expect*/
 import React from 'react';
 import App from './App';
 import Menu from 'components/Explorer/Greetings'
