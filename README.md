@@ -174,3 +174,19 @@ export GIT_EMAIL=<email>
 ```
 
 <br />
+
+### Test setup
+
+```
+npm install --save enzyme enzyme-adapter-react-16 react-test-renderer
+npm install --save jest-enzyme
+npm install --save react-testing-library jest-dom
+
+# see explorer/src/setupTests.js for common test imports
+
+# To run tests execute:
+npm test
+
+```
+
+<br />
