@@ -187,6 +187,9 @@ npm install --save react-testing-library jest-dom
 # To run tests execute:
 npm test
 
+# or
+
+npm test -- --coverage
 ```
 
 <br />

@@ -8,7 +8,6 @@ import owl from 'owl.png';
 class App extends Component {
   render() {
     if (this.props.authState === "signedIn") {
-      console.log("Rendering app...");
       return (
         <div className="App">
           <Menu {...this.props} />

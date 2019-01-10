@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App when the app is logged in should render as expected 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="menu"
+  >
+    <nav
+      className="navbar navbar-inverse"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="navbar-header"
+        >
+          <a
+            className="navbar-brand"
+            href="#brand"
+          >
+            Explorer
+          </a>
+          <button
+            className="navbar-toggle collapsed"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="sr-only"
+            >
+              Toggle navigation
+            </span>
+            <span
+              className="icon-bar"
+            />
+            <span
+              className="icon-bar"
+            />
+            <span
+              className="icon-bar"
+            />
+          </button>
+        </div>
+        <div
+          aria-expanded={null}
+          className="navbar-collapse collapse"
+        >
+          <ul
+            className="nav navbar-nav navbar-right"
+            role={null}
+          >
+            <li
+              className=""
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                Sign Out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="owl.png"
+    />
+    <p />
+    <form>
+      <div
+        className="form-group has-feedback has-error"
+      >
+        <input
+          className="form-control"
+          id="formBasicText"
+          onChange={[Function]}
+          placeholder="Enter URL"
+          type="text"
+          value=""
+        />
+        <br />
+        <span
+          className="form-control-feedback glyphicon glyphicon-remove"
+        />
+        <button
+          className="btn btn-primary"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          Store
+        </button>
+      </div>
+    </form>
+  </header>
+</div>
+`;

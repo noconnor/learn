@@ -30,7 +30,6 @@ class LoginForm extends AuthPiece {
         }
     }
     showComponent(theme){
-        console.log("Rendering signIn");
         return (
             <div className="App">
                 <header className="App-header">
