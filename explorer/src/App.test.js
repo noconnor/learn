@@ -44,35 +44,49 @@ describe("App", () =>{
       const tree = renderer.create(<App {...props} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
+    
+    // *** instead of snapshot *** 
+    it("always renders a div", () => {
+      const divs = app().find("div");
+      expect(divs.length).toBeGreaterThan(0);
+    });
+    describe("the rendered div", () => {
+      it("contains everything else that gets rendered", () => {
+        const divs = app().find("div");
+        const wrappingDiv = divs.first();
+        expect(wrappingDiv.children()).toEqual(app().children());
+      });
+    });
+    // *** end instead of snapshot *** 
 
-    describe("then the menu component", () => {
+    describe("the menu component", () => {
       it('should be rendered', () => {
         expect(app().find(Menu).length).toBe(1);
       });
-      it('should inherit props', () => {
+      it('should inherit authState props', () => {
         const menu = app().find(Menu);
         expect(menu.props().authState).toBe(props.authState);
       });
       
     });
     
-    describe("then the explorer form component", () => {
+    describe("the explorer form component", () => {
       it('should be rendered', () => {
         expect(app().find(ExplorerForm).length).toBe(1);
       });
-      it('should inherit props', () => {
+      it('should inherit authState props', () => {
         const explorer = app().find(ExplorerForm);
         expect(explorer.props().authState).toBe(props.authState);
       });
     });
     
-    describe("then the header element", () => {
+    describe("the header element", () => {
       it('should be rendered', () => {
         expect(app().find("header").length).toBe(1);
       });
     });
 
-    describe("then the logo image element", () => {
+    describe("the logo image element", () => {
       it('should be rendered', () => {
         expect(app().find("img.App-logo").length).toBe(1);
       });
