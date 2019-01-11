@@ -50,6 +50,7 @@ describe("App", () =>{
       const divs = app().find("div");
       expect(divs.length).toBeGreaterThan(0);
     });
+    
     describe("the rendered div", () => {
       it("contains everything else that gets rendered", () => {
         const divs = app().find("div");
