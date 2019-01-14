@@ -14,7 +14,8 @@ Group by common themes and provide an interface to explore these sources.
 * [Deploy lambda code](#deploy-python-lambda ) - deploying/updating a lambda
 * [Deploy react APP to s3](#deploy-react-app-to-s3) - deploy react app to s3
 * [Cloud9 Setup](#cloud9-setup) - env setup tips for working with cloud9
-
+* [Initialising project](#initialise-project) - how to configure your environment after checkout
+ 
 <br />
 
 ##### Setup latest npm version
@@ -194,3 +195,24 @@ npm test -- --coverage
 ```
 
 <br />
+
+### Initialise Project
+
+After cloning the project and before running npm start, you will need to configure your aws access as follows
+
+```
+# this step requires: npm install -g @aws-amplify/cli@multienv
+
+export REACT_APP=explorer
+
+# may need to install aws-cli
+aws configure
+# ... enter access key and secret
+
+cd $REACT_APP
+amplify init
+# ... choose the environment
+```
+
+<br />
+

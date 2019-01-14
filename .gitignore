@@ -258,4 +258,7 @@ awsconfiguration.json
 node_modules
 # end amplify
 
+.idea
+Dockerfile
+start.sh
 
