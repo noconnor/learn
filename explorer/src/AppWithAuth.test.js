@@ -1,12 +1,11 @@
 /*global expect*/
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { Authenticator } from "aws-amplify-react";
 import AppWithAuth from './AppWithAuth';
-import LoginForm from 'components/Cognito/SignIn'
-import RequireNewPassword from 'components/Cognito/Password'
-import App from './App'
+import LoginForm from 'components/Cognito/SignIn';
+import RequireNewPassword from 'components/Cognito/Password';
+import App from './App';
 
 
 describe("AppWithAuth", () =>{
@@ -57,7 +56,7 @@ describe("AppWithAuth", () =>{
         expect(liveAuthenticator.find(App).length).toBe(1);
       });
     });
-  })
+  });
 
   
 });

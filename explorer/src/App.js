@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
 import 'App.css';
-import ExplorerForm from 'components/Explorer/Form'
-import Menu from 'components/Explorer/Greetings'
+import ExplorerForm from 'components/Explorer/Form';
+import Menu from 'components/Explorer/Greetings';
 import owl from 'owl.png';
 
 class App extends Component {
