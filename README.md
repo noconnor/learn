@@ -205,6 +205,9 @@ After cloning the project and before running npm start, you will need to configu
 
 export REACT_APP=explorer
 
+# download all dependencies
+npm install
+
 # may need to install aws-cli
 aws configure
 # ... enter access key and secret
@@ -212,6 +215,9 @@ aws configure
 cd $REACT_APP
 amplify init
 # ... choose the environment
+
+# run the application
+npm start 
 ```
 
 <br />
