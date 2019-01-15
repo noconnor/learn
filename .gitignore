@@ -261,4 +261,4 @@ node_modules
 .idea
 Dockerfile
 start.sh
-
+docker-sync.yml
