@@ -1,0 +1,41 @@
+service: urls
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  authorizer:
+    arn: ${file(../explorer/src/config.json):cognito_arn}
+    resultTtlInSeconds: 0
+    identitySource: method.request.header.Authorization
+    identityValidationExpression: '.*'
+        
+  customDomain:
+    domainName: urls.learn.noconnor.xyz
+    certificateName: '*.learn.noconnor.xyz'
+    endpointType: 'regional'
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: prod
+  region: eu-west-1
+
+functions:
+  submit:
+    handler: handler.create
+    events:
+      - http:
+          path: /urls
+          method: POST
+          cors: true
+          authorizer: ${self:custom.authorizer}
+      - http:
+          path: /urls
+          method: OPTIONS
+          cors: true
+          
